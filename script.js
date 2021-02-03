@@ -1,11 +1,37 @@
 const text = document.getElementById('text')
+/*let voices = [
+  {
+    name: 'English',
+    value: 'en-Us',
+  },
+  {
+    name: 'Telugu',
+    value: 'te',
+  },
+  {
+    name: 'Hindi',
+    value: 'hi',
+  },
+]
+const voicesDropdown = document.querySelector('[name="lang"]')*/
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
 const speechrecognisation = new SpeechRecognition()
 speechrecognisation.interimResults = true
-speechrecognisation.lang = 'en-US'
 speechrecognisation.maxAlternatives = 1
+
+/*function populateVoices() {
+  voicesDropdown.innerHTML = voices
+    .map((voice) => `<option value="${voice.value}">${voice.name}</option>`)
+    .join('')
+}
+
+function setVoice() {
+  speechrecognisation.lang = voices.find((voice) => voice.value === this.value)
+  console.log(this.value)
+}
+voicesDropdown.addEventListener('change', setVoice) */
 
 const click = document.querySelector('.button')
 let p = document.createElement('p')
